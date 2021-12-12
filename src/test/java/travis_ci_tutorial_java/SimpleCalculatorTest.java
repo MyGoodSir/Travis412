@@ -26,11 +26,13 @@ public class SimpleCalculatorTest {
 		assertEquals(calc.multiply(5,0),0);		//test degenerate rule for 0
 		assertEquals(calc.multiply(5,1),5);		//test identity
 	}
+	
 	@Test
 	public void testDivide() {
+		double epsilon = 0.0000001;						//room for error
 		SimpleCalculator calc = new SimpleCalculator();
-		assertEquals(calc.divide(6,3),2);	//test positive
-		assertEquals(calc.divide(-6,3),-2);	//test negative
-		assertEquals(calc.divide(3,2),1.5);	//test fractional
+		assertEquals(calc.divide(6,3),2, epsilon);		//test positive
+		assertEquals(calc.divide(-6,3),-2, epsilon);	//test negative
+		assertEquals(calc.divide(3,2),1.5, epsilon);	//test fractional
 	}
 }
