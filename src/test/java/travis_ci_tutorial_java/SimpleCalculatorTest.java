@@ -26,4 +26,11 @@ public class SimpleCalculatorTest {
 		assertEquals(calc.multiply(5,0),0);		//test degenerate rule for 0
 		assertEquals(calc.multiply(5,1),5);		//test identity
 	}
+	@Test
+	public void testDivide() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.divide(6,3),2);	//test positive
+		assertEquals(calc.divide(-6,3),-2);	//test negative
+		assertEquals(calc.divide(3,2),1.5);	//test fractional
+	}
 }
