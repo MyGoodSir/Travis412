@@ -14,8 +14,16 @@ public class SimpleCalculatorTest {
 	@Test
 	public void testMinus() {
 		SimpleCalculator calc = new SimpleCalculator();
-		assertEquals(calc.minus(5,3),2);
-		assertEquals(calc.minus(2,2),0);
-		assertEquals(calc.minus(2,3),-1);
+		assertEquals(calc.minus(5,3),2);	//test with smaller subtrahend
+		assertEquals(calc.minus(2,2),0);	//test with equal subtrahend
+		assertEquals(calc.minus(2,3),-1);	//test with larger subtrahend
+	}
+	@Test
+	public void testMultiply() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.multiply(5,3),15);	//test positive
+		assertEquals(calc.multiply(5,-3),-15);	//test negative
+		assertEquals(calc.multiply(5,0),0);		//test degenerate rule for 0
+		assertEquals(calc.multiply(5,1),5);		//test identity
 	}
 }
